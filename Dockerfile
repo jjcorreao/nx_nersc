@@ -20,4 +20,4 @@ RUN wget http://download.nomachine.com/download/4.6/Linux/nomachine-cloud-server
 
 #ADD cloud.cfg /usr/NX/etc
 
-
+EXPOSE 80 443 4080 4443 4000
