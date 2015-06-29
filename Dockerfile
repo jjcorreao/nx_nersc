@@ -1,14 +1,10 @@
-# A basic apache server. To use either add or bind mount content under /var/www
-FROM ubuntu:12.04
+FROM ubuntu:6
 
-MAINTAINER Joaquin Correa version: 0.1
+MAINTAINER Joaquin Correa <JoaquinCorrea@lbl.gov>
 
-RUN apt-get update && apt-get install -y apache2 && apt-get clean && rm -rf /var/lib/apt/lists/*
+ADD nomachine-cloud-server-evaluation_4.6.4_14_x86_64.tar.gz /usr
+RUN 'cd /usr ; sudo tar xvzf nomachine-cloud-server-evaluation_4.6.4_14_x86_64.tar.gz'
+RUN sudo /usr/NX/nxserver --install
 
-ENV APACHE_RUN_USER www-data
-ENV APACHE_RUN_GROUP www-data
-ENV APACHE_LOG_DIR /var/log/apache2
+ADD cloud.cfg /usr/NX/etc
 
-EXPOSE 80
-
-CMD ["/usr/sbin/apache2", "-D", "FOREGROUND"]
