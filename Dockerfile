@@ -10,9 +10,9 @@ MAINTAINER Joaquin Correa <JoaquinCorrea@lbl.gov>
 RUN yum install -y wget tar
 
 RUN wget http://download.nomachine.com/download/4.6/Linux/nomachine-cloud-server-evaluation_4.6.4_14_x86_64.tar.gz -P /tmp \
-	&& tar -zxvf /tmp/nomachine-cloud-server-evaluation_4.6.4_14_x86_64.tar.gz -C /usr \
-	&& /usr/NX/nxserver --install \
-	&& rm /tmp/nomachine-cloud-server-evaluation_4.6.4_14_x86_64.tar.gz
+	&& sudo ar -zxvf /tmp/nomachine-cloud-server-evaluation_4.6.4_14_x86_64.tar.gz -C /usr \
+	&& sudo /usr/NX/nxserver --install \
+	&& sudo rm /tmp/nomachine-cloud-server-evaluation_4.6.4_14_x86_64.tar.gz
 
 #RUN 'ls /usr'
 #RUN tar -zxvf /usr/nomachine-cloud-server-evaluation_4.6.4_14_x86_64.tar.gz -C /usr
