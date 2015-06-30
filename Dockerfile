@@ -1,6 +1,6 @@
 FROM centos:6
 MAINTAINER Joaquin Correa <JoaquinCorrea@lbl.gov>
-USER root
+#USER root
 RUN yum install -y wget \
 	tar
 
