@@ -16,3 +16,4 @@ RUN wget http://download.nomachine.com/download/4.6/Linux/nomachine-cloud-server
 	&& rm /tmp/nomachine-cloud-server-evaluation_4.6.4_14_x86_64.tar.gz
 
 EXPOSE 80 443 4080 4443 4000
+CMD ["/usr/NX/scripts/init/nxserver","start"]
