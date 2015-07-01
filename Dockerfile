@@ -4,11 +4,7 @@ USER root
 RUN yum install -y wget \
 	tar
 
-RUN yum groupinstall -y "X Window System" \
-	"Desktop" \
-	"Desktop Platform" \
-	"Fonts" \
-	"General Purpose Desktop"
+RUN yum groupinstall -y "X Window System"
 
 RUN wget http://download.nomachine.com/download/4.6/Linux/nomachine-cloud-server-evaluation_4.6.4_14_x86_64.tar.gz -P /tmp \
 	&& tar -zxvf /tmp/nomachine-cloud-server-evaluation_4.6.4_14_x86_64.tar.gz -C /usr \
